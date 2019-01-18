@@ -1,0 +1,8 @@
+{
+  "name": "react-native-shapes",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/lfkwtz/react-native-shapes",
+  "author": "Michael Lefkowitz <lefkowitz.michael@gmail.com>",
+  "license": "MIT"
+}
