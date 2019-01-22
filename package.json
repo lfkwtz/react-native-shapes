@@ -1,8 +1,18 @@
 {
   "name": "react-native-shapes",
   "version": "0.0.1",
-  "main": "index.js",
-  "repository": "https://github.com/lfkwtz/react-native-shapes",
+  "description": "",
+  "license": "MIT",
   "author": "Michael Lefkowitz <lefkowitz.michael@gmail.com>",
-  "license": "MIT"
+  "repository": "https://github.com/lfkwtz/react-native-shapes",
+  "main": "src/index.js",
+  "keywords": [
+    "shapes",
+    "icons",
+    "css",
+    "react",
+    "react-native",
+    "react native",
+    "expo"
+  ]
 }
