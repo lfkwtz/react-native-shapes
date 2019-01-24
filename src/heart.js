@@ -5,6 +5,16 @@ export class Heart extends PureComponent {
   render() {
     const { color, rotate, size } = this.props;
 
+    const heartPiece = {
+      width: 6 * size,
+      height: 9 * size,
+      position: "absolute",
+      top: 0,
+      borderTopLeftRadius: 3 * size,
+      borderTopRightRadius: 3 * size,
+      backgroundColor: color
+    };
+
     return (
       <View
         style={[
@@ -22,15 +32,7 @@ export class Heart extends PureComponent {
               transform: [{ rotate: "-45deg" }],
               left: 0.9 * size
             },
-            {
-              width: 6 * size,
-              height: 9 * size,
-              position: "absolute",
-              top: 0,
-              borderTopLeftRadius: 3 * size,
-              borderTopRightRadius: 3 * size,
-              backgroundColor: color || "red"
-            }
+            heartPiece
           ]}
         />
         <View
@@ -39,16 +41,7 @@ export class Heart extends PureComponent {
               transform: [{ rotate: "45deg" }],
               right: 0.9 * size
             },
-
-            {
-              width: 6 * size,
-              height: 9 * size,
-              position: "absolute",
-              top: 0,
-              borderTopLeftRadius: 3 * size,
-              borderTopRightRadius: 3 * size,
-              backgroundColor: color || "red"
-            }
+            heartPiece
           ]}
         />
       </View>

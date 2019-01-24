@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 export class Triangle extends PureComponent {
   render() {
-    const { color, rotate, size } = this.props;
+    const { color, rotate, type, size } = this.props;
 
     return (
       <View
@@ -11,12 +11,12 @@ export class Triangle extends PureComponent {
           {
             width: 0,
             height: 0,
-            borderLeftWidth: size / 2,
-            borderRightWidth: size / 2,
-            borderBottomWidth: size,
+            borderLeftWidth: (size / 2) * 10,
+            borderRightWidth: (size / 2) * 10,
+            borderBottomWidth: (type === "isosceles" ? size / 2 : size) * 10,
             borderLeftColor: "transparent",
             borderRightColor: "transparent",
-            borderBottomColor: color || "red",
+            borderBottomColor: color,
             transform: [{ rotate: `${rotate}deg` }]
           }
         ]}

@@ -1,1 +1,3 @@
-export * from "./shapes/triangle";
+export * from "./chevron";
+export * from "./heart";
+export * from "./triange";
