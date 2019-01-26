@@ -1,18 +1,31 @@
 {
-  "name": "react-native-shapes",
-  "version": "0.0.3",
-  "description": "",
-  "license": "MIT",
-  "author": "Michael Lefkowitz <lefkowitz.michael@gmail.com>",
-  "repository": "https://github.com/lfkwtz/react-native-shapes",
-  "main": "src/index.js",
-  "keywords": [
-    "shapes",
-    "icons",
-    "css",
-    "react",
-    "react-native",
-    "react native",
-    "expo"
-  ]
+    "name": "react-native-shapes",
+    "version": "0.0.4",
+    "description": "A collection of simple shapes built with CSS for use as icons, buttons, graphics, etc..",
+    "license": "MIT",
+    "author": "Michael Lefkowitz <lefkowitz.michael@gmail.com>",
+    "repository": "https://github.com/lfkwtz/react-native-shapes",
+    "main": "src/index.js",
+    "keywords": [
+        "shapes",
+        "icons",
+        "css",
+        "react",
+        "react-native",
+        "react native",
+        "expo"
+    ],
+    "devDependencies": {
+        "eslint-config-ls-react": "https://github.com/lawnstarter/eslint-config-ls-react#2.0.3",
+        "husky": "^0.14.3",
+        "prettier": "^1.16.1",
+        "pretty-quick": "^1.10.0",
+        "prop-types": "^15.6.2"
+    },
+    "scripts": {
+        "precommit": "pretty-quick --staged",
+        "prettier:debug-check": "prettier --config ./.prettierrc.js --debug-check \"{src,test}/**/*.js\"",
+        "preprettier:all": "yarn run prettier:debug-check",
+        "prettier:all": "prettier --config ./.prettierrc.js --write \"{src,test}/**/*.js\""
+    }
 }

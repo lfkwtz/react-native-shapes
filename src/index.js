@@ -1,3 +1,3 @@
-export * from "./chevron";
-export * from "./heart";
-export * from "./triangle";
+export * from './chevron';
+export * from './heart';
+export * from './triangle';

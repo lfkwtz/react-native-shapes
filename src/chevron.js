@@ -1,81 +1,96 @@
-import React, { PureComponent } from "react";
-import { View } from "react-native";
+import React, { PureComponent } from 'react';
+import { View } from 'react-native';
+import PropTypes from 'prop-types';
 
 export class Chevron extends PureComponent {
-  render() {
-    const { color, rotate, size } = this.props;
-
-    const chevronTriangle = {
-      backgroundColor: "transparent",
-      borderTopWidth: 1.33 * size,
-      borderRightWidth: 0,
-      borderBottomWidth: 0,
-      borderLeftWidth: 5 * size,
-      borderTopColor: "transparent",
-      borderBottomColor: "transparent",
-      borderRightColor: "transparent",
-      borderLeftColor: color
+    static propTypes = {
+        color: PropTypes.string,
+        rotate: PropTypes.number,
+        size: PropTypes.number,
+        style: PropTypes.shape({}),
     };
 
-    return (
-      <View
-        style={{
-          width: 10 * size,
-          height: 3.33 * size,
-          transform: [{ rotate: `${rotate}deg` }]
-        }}
-      >
-        <View
-          style={{
-            width: 10 * size,
-            height: 3.33 * size,
-            backgroundColor: color
-          }}
-        />
-        <View
-          style={[
-            chevronTriangle,
-            {
-              position: "absolute",
-              top: -1.33 * size,
-              left: 0
-            }
-          ]}
-        />
-        <View
-          style={[
-            chevronTriangle,
-            {
-              position: "absolute",
-              top: -1.33 * size,
-              right: 0,
-              transform: [{ scaleX: -1 }]
-            }
-          ]}
-        />
-        <View
-          style={[
-            chevronTriangle,
-            {
-              position: "absolute",
-              bottom: -1.33 * size,
-              left: 0,
-              transform: [{ scale: -1 }]
-            }
-          ]}
-        />
-        <View
-          style={[
-            chevronTriangle,
-            {
-              position: "absolute",
-              bottom: -1.33 * size,
-              right: 0,
-              transform: [{ scaleY: -1 }]
-            }
-          ]}
-        />
-      </View>
-    );
-  }
+    static defaultProps = {
+        color: '#000',
+        rotate: 0,
+        size: 1,
+        style: {},
+    };
+
+    render() {
+        const { color, rotate, size, style } = this.props;
+
+        const chevronTriangle = {
+            backgroundColor: 'transparent',
+            borderWidth: 0,
+            borderTopWidth: 1.33 * size,
+            borderLeftWidth: 5 * size,
+            borderColor: 'transparent',
+            borderLeftColor: color,
+        };
+
+        return (
+            <View
+                style={[
+                    {
+                        width: 10 * size,
+                        height: 3.33 * size,
+                        transform: [{ rotate: `${rotate}deg` }],
+                    },
+                    style,
+                ]}
+            >
+                <View
+                    style={{
+                        width: 10 * size,
+                        height: 3.33 * size,
+                        backgroundColor: color,
+                    }}
+                />
+                <View
+                    style={[
+                        chevronTriangle,
+                        {
+                            position: 'absolute',
+                            top: -1.33 * size,
+                            left: 0,
+                        },
+                    ]}
+                />
+                <View
+                    style={[
+                        chevronTriangle,
+                        {
+                            position: 'absolute',
+                            top: -1.33 * size,
+                            right: 0,
+                            transform: [{ scaleX: -1 }],
+                        },
+                    ]}
+                />
+                <View
+                    style={[
+                        chevronTriangle,
+                        {
+                            position: 'absolute',
+                            bottom: -1.33 * size,
+                            left: 0,
+                            transform: [{ scale: -1 }],
+                        },
+                    ]}
+                />
+                <View
+                    style={[
+                        chevronTriangle,
+                        {
+                            position: 'absolute',
+                            bottom: -1.33 * size,
+                            right: 0,
+                            transform: [{ scaleY: -1 }],
+                        },
+                    ]}
+                />
+            </View>
+        );
+    }
 }

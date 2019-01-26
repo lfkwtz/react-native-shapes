@@ -1,26 +1,43 @@
-import React, { PureComponent } from "react";
-import { View } from "react-native";
+import React, { PureComponent } from 'react';
+import { View } from 'react-native';
+import PropTypes from 'prop-types';
 
 export class Triangle extends PureComponent {
-  render() {
-    const { color, rotate, type, size } = this.props;
+    static propTypes = {
+        color: PropTypes.string,
+        rotate: PropTypes.number,
+        size: PropTypes.number,
+        style: PropTypes.shape({}),
+        type: PropTypes.oneOf(['equilateral', 'isosceles']),
+    };
 
-    return (
-      <View
-        style={[
-          {
-            width: 0,
-            height: 0,
-            borderLeftWidth: (size / 2) * 10,
-            borderRightWidth: (size / 2) * 10,
-            borderBottomWidth: (type === "isosceles" ? size / 2 : size) * 10,
-            borderLeftColor: "transparent",
-            borderRightColor: "transparent",
-            borderBottomColor: color,
-            transform: [{ rotate: `${rotate}deg` }]
-          }
-        ]}
-      />
-    );
-  }
+    static defaultProps = {
+        color: '#000',
+        rotate: 0,
+        size: 1,
+        style: {},
+        type: 'equilateral',
+    };
+
+    render() {
+        const { color, rotate, size, style, type } = this.props;
+
+        return (
+            <View
+                style={[
+                    {
+                        width: 0,
+                        height: 0,
+                        borderLeftWidth: (size / 2) * 10,
+                        borderRightWidth: (size / 2) * 10,
+                        borderBottomWidth: (type === 'isosceles' ? size / 2 : size) * 10,
+                        borderColor: 'transparent',
+                        borderBottomColor: color,
+                        transform: [{ rotate: `${rotate}deg` }],
+                    },
+                    style,
+                ]}
+            />
+        );
+    }
 }
