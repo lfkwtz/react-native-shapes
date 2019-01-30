@@ -8,6 +8,7 @@ export class Chevron extends PureComponent {
         rotate: PropTypes.number,
         size: PropTypes.number,
         style: PropTypes.shape({}),
+        type: PropTypes.oneOf(['thin', 'thick']),
     };
 
     static defaultProps = {
@@ -15,10 +16,11 @@ export class Chevron extends PureComponent {
         rotate: 0,
         size: 1,
         style: {},
+        type: 'thin',
     };
 
     render() {
-        const { color, rotate, size, style } = this.props;
+        const { color, rotate, size, style, type } = this.props;
 
         const chevronTriangle = {
             backgroundColor: 'transparent',
@@ -28,6 +30,31 @@ export class Chevron extends PureComponent {
             borderColor: 'transparent',
             borderLeftColor: color,
         };
+
+        if (type === 'thin') {
+            return (
+                <View
+                    style={[
+                        {
+                            borderLeftWidth: 0,
+                            borderLeftColor: 'transparent',
+                            borderTopWidth: 1.5 * size,
+                            borderTopColor: color,
+                            borderRightWidth: 1.5 * size,
+                            borderRightColor: color,
+                            width: 7 * size,
+                            height: 7 * size,
+                            transform: [
+                                { translateX: 1.5 * size },
+                                { translateY: -2.4 * size },
+                                { rotate: `${rotate + 135}deg` },
+                            ],
+                        },
+                        style,
+                    ]}
+                />
+            );
+        }
 
         return (
             <View

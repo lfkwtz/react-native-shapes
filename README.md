@@ -4,6 +4,8 @@
 
 🔻 A collection of simple shapes built with CSS for use as icons, buttons, graphics, etc..
 
+[View example on snack.expo.io](https://snack.expo.io/@lfkwtz/react-native-shapes)
+
 ## Getting Started
 
 ### Installing
@@ -12,11 +14,11 @@
 
 ### Usage
 
-`import { Triangle, Heart } from 'react-native-shapes'`
+`import { Chevron, Heart, Triangle } from 'react-native-shapes'`
 
 ### Shapes
 
--   Chevron
+-   Chevron (also supports `type` prop of thin (default) or thick)
 -   Heart
 -   Triangle (also supports `type` prop of equilateral (default) or isosceles)
 
