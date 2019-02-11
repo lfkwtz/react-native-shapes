@@ -1,6 +1,6 @@
 {
     "name": "react-native-shapes",
-    "version": "0.0.5",
+    "version": "0.1.0",
     "description": "A collection of simple shapes built with CSS for use as icons, buttons, graphics, etc..",
     "license": "MIT",
     "author": "Michael Lefkowitz <lefkowitz.michael@gmail.com>",
