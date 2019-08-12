@@ -1,6 +1,7 @@
 # react-native-shapes
 
 [![npm version](https://badge.fury.io/js/react-native-shapes.svg)](https://badge.fury.io/js/react-native-shapes)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-shapes.svg?style=flat-square)](https://www.npmjs.com/package/react-native-shapes)
 
 🔻 A collection of simple shapes built with CSS for use as icons, buttons, graphics, etc..
 
